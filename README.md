@@ -2,6 +2,8 @@
 
 A 2D pixel-art soulslike in Godot 4. Face the evil necromancer cult.
 
+This is a project my son and I have been working on to introduce him to software development using generative AI.
+
 ## How to Run
 
 Open the project in **Godot 4.3+**: File → Open Project → select this folder.
