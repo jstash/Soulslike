@@ -1,0 +1,29 @@
+[gd_scene load_steps=4 format=3 uid="uid://skelscene"]
+
+[ext_resource type="Script" path="res://scripts/skeleton.gd" id="1_skel"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_body"]
+radius = 3.5
+height = 14.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_atk"]
+size = Vector2(18.0, 12.0)
+
+[node name="Skeleton" type="CharacterBody2D"]
+collision_layer = 8
+collision_mask = 5
+script = ExtResource("1_skel")
+
+[node name="BodyShape" type="CollisionShape2D" parent="."]
+position = Vector2(0, -5)
+shape = SubResource("CapsuleShape2D_body")
+
+[node name="AttackArea" type="Area2D" parent="."]
+collision_layer = 16
+collision_mask = 2
+monitoring = true
+monitorable = false
+
+[node name="Shape" type="CollisionShape2D" parent="AttackArea"]
+shape = SubResource("RectangleShape2D_atk")
+disabled = true

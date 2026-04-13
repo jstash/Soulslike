@@ -1,0 +1,42 @@
+[gd_scene load_steps=5 format=3 uid="uid://playerscene"]
+
+[ext_resource type="Script" path="res://scripts/player.gd" id="1_player"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_body"]
+radius = 5.0
+height = 18.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_atk"]
+size = Vector2(30.0, 16.0)
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_hurt"]
+radius = 6.0
+height = 20.0
+
+[node name="Player" type="CharacterBody2D"]
+collision_layer = 2
+collision_mask = 5
+script = ExtResource("1_player")
+
+[node name="BodyShape" type="CollisionShape2D" parent="."]
+position = Vector2(0, -7)
+shape = SubResource("CapsuleShape2D_body")
+
+[node name="AttackArea" type="Area2D" parent="."]
+collision_layer = 4
+collision_mask = 8
+monitoring = true
+monitorable = false
+
+[node name="Shape" type="CollisionShape2D" parent="AttackArea"]
+shape = SubResource("RectangleShape2D_atk")
+disabled = true
+
+[node name="HurtArea" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 16
+monitoring = true
+
+[node name="HurtShape" type="CollisionShape2D" parent="HurtArea"]
+position = Vector2(0, -7)
+shape = SubResource("CapsuleShape2D_hurt")
