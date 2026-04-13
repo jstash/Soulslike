@@ -6,7 +6,7 @@ This is a project my son and I have been working on to introduce him to software
 
 ## How to Run
 
-Open the project in **Godot 4.3+**: File → Open Project → select this folder.
+Open the project in **Godot 4.6+**: File → Open Project → select this folder.
 Press **F5** or the Play button to run.
 
 ## Controls
